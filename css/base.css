@@ -32,6 +32,9 @@ body {
 
 .page {
   border-top: 2px solid #313338;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .topbar {
