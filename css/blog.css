@@ -1,0 +1,91 @@
+.page-blog {
+  background: var(--bg-light);
+  padding-bottom: 80px;
+}
+
+.blog-top {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ecf3f8 0%, #ecf3f8 58%, #ececec 58%);
+}
+
+.blog-wave {
+  position: absolute;
+  left: -3%;
+  right: -3%;
+  bottom: 0;
+  height: 260px;
+  border-radius: 42% 58% 62% 38% / 45% 44% 56% 55%;
+  background: #dfeaf2;
+}
+
+.blog-title {
+  min-height: 430px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-title h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+}
+
+.blog-title .btn {
+  margin-top: 2rem;
+}
+
+.blog-grid {
+  margin-top: -28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.post-card {
+  border-radius: 22px;
+  background: #f8f8f8;
+  overflow: hidden;
+  box-shadow: 0 14px 26px rgba(35, 40, 48, 0.08);
+}
+
+.post-image {
+  height: 250px;
+}
+
+.img-one {
+  background: linear-gradient(130deg, #dfe2e8, #b5b8bf);
+}
+
+.img-two {
+  background: linear-gradient(130deg, #cdd2da, #7cb0bc);
+}
+
+.img-three {
+  background: linear-gradient(130deg, #274061, #476989);
+}
+
+.post-body {
+  padding: 1.3rem 1.4rem 1.7rem;
+}
+
+.post-body h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+}
+
+.meta {
+  margin: 0.8rem 0 0;
+  color: #ff920e;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.post-body p {
+  margin: 0.8rem 0 0;
+  color: #5f6875;
+  line-height: 1.75;
+  font-size: 1.02rem;
+}

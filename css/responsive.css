@@ -1,0 +1,159 @@
+@media (max-width: 1150px) {
+  .nav {
+    gap: 1rem;
+  }
+
+  .contact-grid,
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    min-height: 860px;
+    padding-top: 3rem;
+  }
+
+  .hero-visual {
+    height: 460px;
+  }
+
+  .contact-grid {
+    min-height: auto;
+    padding: 70px 0;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .domain-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-wrap {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem 0;
+  }
+
+  .brand {
+    font-size: 2rem;
+  }
+
+  .nav {
+    gap: 0.8rem 1rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .hero-grid {
+    min-height: 800px;
+  }
+
+  .hero-copy h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-copy p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.92rem 1rem;
+  }
+
+  .contact-form {
+    padding: 1.4rem;
+  }
+
+  .contact-row h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-row p {
+    font-size: 1rem;
+  }
+
+  .hero-visual {
+    height: 330px;
+  }
+
+  .rack {
+    width: 210px;
+    height: 56px;
+  }
+
+  .glass-card,
+  .laptop,
+  .download-arrow,
+  .file-chip,
+  .lock-card,
+  .stack-slim,
+  .device-panel,
+  .desktop,
+  .monitor,
+  .monitor-glass {
+    transform: scale(0.84);
+    transform-origin: right bottom;
+  }
+
+  .hero-wave {
+    height: 140px;
+    margin-top: -42px;
+  }
+
+  .domain-list,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 380px;
+    border-radius: 24px;
+    padding: 2rem 1.3rem;
+  }
+
+  .card p {
+    max-width: 100%;
+  }
+
+  .cta-wave {
+    top: -100px;
+    height: 250px;
+  }
+
+  .cta-content {
+    min-height: 500px;
+  }
+
+  .footer-wrap {
+    min-height: 120px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-wrap p {
+    font-size: 1rem;
+  }
+
+  .socials span {
+    font-size: 1.5rem;
+  }
+}
