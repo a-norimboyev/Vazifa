@@ -34,6 +34,16 @@
     grid-template-columns: 1fr;
   }
 
+  .feature-grid,
+  .feature-grid-reverse,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-visual {
+    order: -1;
+  }
+
   .cta-content {
     min-height: 520px;
   }
@@ -119,8 +129,46 @@
   }
 
   .domain-list,
-  .blog-grid {
+  .blog-grid,
+  .testimonial-grid {
     grid-template-columns: 1fr;
+  }
+
+  .feature {
+    padding: 70px 0;
+  }
+
+  .feature-grid {
+    gap: 2rem;
+  }
+
+  .feature-copy h3 {
+    font-size: 2.2rem;
+  }
+
+  .feature-lead,
+  .feature-point p,
+  .testimonial-card p {
+    font-size: 1rem;
+  }
+
+  .feature-point {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .point-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 1.3rem;
+  }
+
+  .feature-visual {
+    min-height: 320px;
+  }
+
+  .testimonial-card {
+    padding: 4.8rem 1.3rem 2rem;
   }
 
   .card {
