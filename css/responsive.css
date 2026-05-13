@@ -34,14 +34,21 @@
     grid-template-columns: 1fr;
   }
 
+  .service-grid,
   .feature-grid,
   .feature-grid-reverse,
-  .testimonial-grid {
+  .testimonial-grid,
+  .pricing-grid,
+  .feature-columns {
     grid-template-columns: 1fr;
   }
 
   .feature-visual {
     order: -1;
+  }
+
+  .service-card-wide {
+    grid-column: auto;
   }
 
   .cta-content {
@@ -138,8 +145,33 @@
     padding: 70px 0;
   }
 
+  .services-overview,
+  .pricing-block,
+  .testimonials,
+  .guarantee {
+    padding: 70px 0;
+  }
+
   .feature-grid {
     gap: 2rem;
+  }
+
+  .services-intro h3 {
+    font-size: 2rem;
+  }
+
+  .service-card,
+  .price-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .service-card h4,
+  .price-card h4 {
+    font-size: 1.35rem;
+  }
+
+  .price-tag {
+    font-size: 2rem;
   }
 
   .feature-copy h3 {
