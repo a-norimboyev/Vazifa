@@ -23,6 +23,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: var(--ink);
   background: var(--bg-light);
+  overflow-x: hidden;
 }
 
 .container {
@@ -35,6 +36,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
 }
 
 .topbar {

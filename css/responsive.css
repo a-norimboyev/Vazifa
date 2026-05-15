@@ -9,46 +9,60 @@
   }
 
   .hero-grid {
-    min-height: 860px;
-    padding-top: 3rem;
+    min-height: auto;
+    padding: 3.5rem 0 8rem;
   }
 
   .hero-visual {
     height: 460px;
   }
 
-  .contact-grid {
-    min-height: auto;
-    padding: 70px 0;
-  }
 
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .domain-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .service-grid,
+  .cards,
   .feature-grid,
   .feature-grid-reverse,
-  .testimonial-grid,
-  .pricing-grid,
   .feature-columns {
     grid-template-columns: 1fr;
   }
 
-  .feature-visual {
-    order: -1;
+  .services-overview .container {
+    grid-template-columns: 1fr;
+  }
+
+  .services-intro {
+    max-width: 760px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  .service-grid,
+  .pricing-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-grid {
+    grid-column: auto;
+    margin-top: 3rem;
+    padding-top: 0;
+  }
+
+  .service-card:nth-child(2),
+  .service-card:nth-child(3) {
+    transform: none;
   }
 
   .service-card-wide {
-    grid-column: auto;
+    grid-column: 1 / -1;
+  }
+
+  .feature-visual {
+    order: -1;
   }
 
   .cta-content {
@@ -56,43 +70,125 @@
   }
 }
 
-@media (max-width: 760px) {
-  .nav-wrap {
-    min-height: auto;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.7rem;
-    padding: 1rem 0;
-  }
-
-  .brand {
-    font-size: 2rem;
-  }
-
-  .nav {
-    gap: 0.8rem 1rem;
-  }
-
-  .nav a {
-    font-size: 0.95rem;
+@media (max-width: 900px) {
+  .service-grid,
+  .pricing-grid,
+  .testimonial-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-grid {
-    min-height: 800px;
+    padding-bottom: 6rem;
+  }
+
+  .hero-copy,
+  .feature-copy {
+    max-width: none;
+  }
+
+  .service-card-wide {
+    grid-column: auto;
+  }
+
+  .contact-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .domains,
+  .services-overview,
+  .feature,
+  .pricing-block,
+  .testimonials,
+  .guarantee,
+  .cta {
+    overflow: hidden;
+  }
+
+  .topbar {
+    position: static;
+  }
+
+  .nav-wrap {
+    min-height: auto;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.9rem 0 1rem;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+    line-height: 1.15;
+    text-align: center;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+  }
+
+  .nav a {
+    font-size: 0.84rem;
+    text-align: center;
+    padding: 0.2rem 0;
+  }
+
+  .reveal-up,
+  .reveal-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-grid {
+    min-height: auto;
+    padding: 2.6rem 0 1.2rem;
+    gap: 1.4rem;
+  }
+
+  .hero-copy {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .services-intro,
+  .feature-copy,
+  .pricing-heading,
+  .testimonials-heading,
+  .cta-content {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-copy h2 {
-    font-size: 2.5rem;
+    font-size: 1.95rem;
+    max-width: 11ch;
+    margin-inline: auto;
   }
 
   .hero-copy p {
-    font-size: 1.05rem;
-    line-height: 1.75;
+    max-width: 25rem;
+    margin: 1.2rem auto 0;
+    font-size: 0.98rem;
+    line-height: 1.8;
   }
 
   .btn {
-    width: 100%;
+    width: min(100%, 230px);
     padding: 0.92rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   .contact-form {
@@ -108,7 +204,10 @@
   }
 
   .hero-visual {
-    height: 330px;
+    height: 280px;
+    width: min(100%, 340px);
+    margin-inline: auto;
+    overflow: hidden;
   }
 
   .rack {
@@ -127,25 +226,20 @@
   .monitor,
   .monitor-glass {
     transform: scale(0.84);
-    transform-origin: right bottom;
+    transform-origin: center bottom;
   }
 
   .hero-wave {
-    height: 140px;
-    margin-top: -42px;
+    height: 100px;
+    margin-top: -18px;
   }
 
-  .domain-list,
-  .blog-grid,
-  .testimonial-grid {
+  .domain-list {
     grid-template-columns: 1fr;
   }
 
-  .feature {
-    padding: 70px 0;
-  }
-
   .services-overview,
+  .feature,
   .pricing-block,
   .testimonials,
   .guarantee {
@@ -160,9 +254,19 @@
     font-size: 2rem;
   }
 
+  .section-title {
+    margin-bottom: 2.3rem;
+  }
+
   .service-card,
   .price-card {
     padding: 1.5rem 1.25rem;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .service-card h4,
@@ -171,17 +275,37 @@
   }
 
   .price-tag {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .feature-copy h3 {
-    font-size: 2.2rem;
+    font-size: 1.95rem;
+  }
+
+  .feature-visual {
+    min-height: 280px;
+    width: min(100%, 340px);
+    margin-inline: auto;
+    overflow: hidden;
   }
 
   .feature-lead,
   .feature-point p,
   .testimonial-card p {
     font-size: 1rem;
+  }
+
+  .tick-list li,
+  .feature-ticks li,
+  .compact-list li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .tick-list li::before {
+    width: 1.45rem;
+    height: 1.45rem;
+    font-size: 0.84rem;
   }
 
   .feature-point {
@@ -195,12 +319,16 @@
     font-size: 1.3rem;
   }
 
-  .feature-visual {
-    min-height: 320px;
+  .service-card,
+  .price-card,
+  .testimonial-card,
+  .card {
+    width: 100%;
+    max-width: 100%;
   }
 
   .testimonial-card {
-    padding: 4.8rem 1.3rem 2rem;
+    padding: 5rem 1.5rem 2.2rem;
   }
 
   .card {
@@ -222,6 +350,21 @@
     min-height: 500px;
   }
 
+  .cta-content h3 {
+    font-size: 2.6rem;
+  }
+
+  .cta-content p {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    max-width: 92%;
+  }
+
+  .price-card .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
   .footer-wrap {
     min-height: 120px;
     flex-direction: column;
@@ -235,5 +378,65 @@
 
   .socials span {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(100%, calc(100% - 28px));
+  }
+
+  .hero-visual,
+  .feature-visual {
+    width: min(100%, 300px);
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .hero-copy h2,
+  .cta-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .hero-grid {
+    padding-top: 2rem;
+  }
+
+  .services-intro h3,
+  .feature-copy h3,
+  .section-title,
+  .blog-title h2,
+  .contact-copy h2 {
+    font-size: 1.95rem;
+  }
+
+  .hero-copy p,
+  .feature-lead,
+  .cta-content p {
+    font-size: 0.96rem;
+  }
+
+  .hero-copy p {
+    max-width: 22rem;
+  }
+
+  .price-tag {
+    font-size: 2.45rem;
+  }
+
+  .service-card h4,
+  .price-card h4,
+  .feature-point h4 {
+    font-size: 1.2rem;
+  }
+
+  .testimonial-card {
+    border-radius: 22px;
   }
 }

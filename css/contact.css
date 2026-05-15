@@ -117,5 +117,9 @@
 
 .contact-form .btn {
   margin-top: 1.9rem;
-  float: right;
+  float: none;
+  width: auto;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: auto;
 }

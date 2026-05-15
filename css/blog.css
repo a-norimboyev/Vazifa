@@ -42,6 +42,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  align-items: stretch;
 }
 
 .post-card {
@@ -49,6 +50,9 @@
   background: #f8f8f8;
   overflow: hidden;
   box-shadow: 0 14px 26px rgba(35, 40, 48, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .post-image {
@@ -69,6 +73,9 @@
 
 .post-body {
   padding: 1.3rem 1.4rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .post-body h3 {
