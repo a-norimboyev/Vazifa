@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #1a2a3a 0%, #0f1a24 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Poppins', 'Roboto', system-ui, sans-serif;
+    padding: 20px;
+}
+
+/* Asosiy konteyner */
+.clock-container {
+    background: rgba(10, 25, 35, 0.5);
+    border-radius: 60px;
+    padding: 25px 35px 35px 35px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Soat ramkasi */
+.clock {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 30% 30%, #fef7e0, #e8ddc0);
+    border-radius: 50%;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(255, 245, 200, 0.7),
+                inset 0 0 8px rgba(0, 0, 0, 0.15);
+    border: 12px solid #3e2a2a;
+    transition: all 0.2s ease;
+}
+
+/* Raqamlar uchun kontener */
+.numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c2b28;
+    text-shadow: 1px 1px 0 rgba(255, 240, 180, 0.9);
+    font-family: 'Segoe UI', 'Poppins', monospace;
+}
+
+.number span {
+    display: inline-block;
+    transform: rotate(calc(var(--rot) * -1deg));
+    margin-top: 22px;
+    background: rgba(245, 235, 200, 0.5);
+    width: 40px;
+    line-height: 40px;
+    border-radius: 40px;
+    backdrop-filter: blur(3px);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Daqiqalik chiziqlar */
+.ticks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.tick-mark {
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    width: 3px;
+    height: 14px;
+    background: #7a5a48;
+    transform-origin: 50% 148px;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+/* Har 5-daqiqada qalinroq chiziq */
+.tick-mark.minor {
+    height: 10px;
+    width: 2px;
+    background: #9b7a64;
+    opacity: 0.5;
+}
+
+.tick-mark.major {
+    height: 18px;
+    width: 4px;
+    background: #4a3024;
+    opacity: 1;
+}
+
+/* Umumiy mil uslubi */
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background-color: #1f2c2e;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.05s cubic-bezier(0.4, 2.2, 0.6, 1);
+}
+
+/* Soat mili */
+.hour-hand {
+    width: 8px;
+    height: 85px;
+    background: #1e2729;
+    transform: translateX(-50%) rotate(0deg);
+    border-radius: 20px 20px 8px 8px;
+}
+
+/* Minut mili */
+.minute-hand {
+    width: 6px;
+    height: 115px;
+    background: #2c3e3b;
+    transform: translateX(-50%) rotate(0deg);
+    border-radius: 20px 20px 6px 6px;
+}
+
+/* Sekund mili */
+.second-hand {
+    width: 3px;
+    height: 130px;
+    background: #c53a1f;
+    transform: translateX(-50%) rotate(0deg);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(200, 60, 30, 0.6);
+}
+
+/* Markaziy nuqta (usti yopiladi) */
+.center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background: #1e2a2e;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    box-shadow: 0 0 0 3px #f3cd81, 0 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Raqamli soat va sana */
+.digital-info {
+    margin-top: 25px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    border-radius: 60px;
+    padding: 12px 20px;
+    box-shadow: inset 0 1px 2px rgba(255,255,200,0.2), 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.digital-time {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Courier New', 'Fira Code', monospace;
+    letter-spacing: 3px;
+    color: #f7ecc7;
+    text-shadow: 0 0 5px #ffb347;
+    background: #00000044;
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 40px;
+}
+
+.date {
+    font-size: 1rem;
+    margin-top: 6px;
+    color: #ddddbb;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Mobil moslashuv */
+@media (max-width: 450px) {
+    .clock {
+        width: 260px;
+        height: 260px;
+        border-width: 8px;
+    }
+    .clock-container {
+        padding: 15px 20px 25px 20px;
+    }
+    .hour-hand {
+        height: 68px;
+        width: 7px;
+    }
+    .minute-hand {
+        height: 92px;
+        width: 5px;
+    }
+    .second-hand {
+        height: 105px;
+        width: 2.5px;
+    }
+    .tick-mark {
+        transform-origin: 50% 118px;
+        top: 8px;
+    }
+    .number span {
+        margin-top: 12px;
+        width: 32px;
+        line-height: 32px;
+        font-size: 20px;
+    }
+    .digital-time {
+        font-size: 1.5rem;
+    }
+}
