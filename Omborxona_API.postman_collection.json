@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Omborxona Tizimi API",
+    "description": "Mahsulotlar uchun xomashyolarni omborxona partiyalaridan FIFO usulida hisoblash REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Xomashyolarni hisoblash (Asosiy vazifa)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  { \"product_code\": \"238923\", \"quantity\": 30 },\n  { \"product_code\": \"498723\", \"quantity\": 20 }\n]"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/calculate/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "calculate", ""]
+        },
+        "description": "30 ta ko'ylak va 20 ta shim uchun ombordan xomashyolarni hisoblash"
+      }
+    },
+    {
+      "name": "2. Bitta mahsulot uchun hisoblash",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product_code\": \"238923\",\n  \"quantity\": 10\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/calculate/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "v1", "calculate", ""]
+        }
+      }
+    },
+    {
+      "name": "3. Mahsulotlar ro'yxati (GET)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/products/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "v1", "products", ""]
+        }
+      }
+    },
+    {
+      "name": "4. Ombor qoldiqlari (GET)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/warehouse-stock/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["api", "v1", "warehouse-stock", ""]
+        }
+      }
+    }
+  ]
+}
